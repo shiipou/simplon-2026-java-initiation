@@ -13,7 +13,18 @@ public class Exercise06ArraysMaxMin {
      * @return la valeur maximale
      */
     public int findMax(int[] array) {
-        throw new UnsupportedOperationException();
+        int max = 0;
+        for(int i = 0; i < array.length; i++){
+            if(i == 0){
+                max = array[i];
+                continue;
+            }
+            if(array[i] > max){
+                max = array[i];
+            }
+        }
+
+        return max;
 
     }
     
@@ -23,7 +34,19 @@ public class Exercise06ArraysMaxMin {
      * @return la valeur minimale
      */
     public int findMin(int[] array) {
-        throw new UnsupportedOperationException();
+        int min = 0;
+        for(int i = 0; i < array.length; i++){
+            if(i == 0){
+                min = array[i];
+                continue;
+            }
+            
+            if(array[i] < min){
+                min = array[i];
+            }
+        }
+
+        return min;
 
     }
     
@@ -33,7 +56,21 @@ public class Exercise06ArraysMaxMin {
      * @return l'index de la valeur maximale (le premier si plusieurs)
      */
     public int findMaxIndex(int[] array) {
-        throw new UnsupportedOperationException();
+        int max = 0;
+        int indexOfMax = 0;
+        for(int i = 0; i < array.length; i++){
+            if(i == 0){
+                max = array[i];
+                continue;
+            }
+            if(array[i] > max){
+                max = array[i];
+                indexOfMax = i;
+            }
+        }
+
+        return indexOfMax;
+
 
     }
     
@@ -43,7 +80,22 @@ public class Exercise06ArraysMaxMin {
      * @return l'index de la valeur minimale (le premier si plusieurs)
      */
     public int findMinIndex(int[] array) {
-        throw new UnsupportedOperationException();
+         int min = 0;
+         int indexOfMin = 0;
+        for(int i = 0; i < array.length; i++){
+            if(i == 0){
+                min = array[i];
+                indexOfMin = i;
+                continue;
+            }
+            
+            if(array[i] < min){
+                min = array[i];
+                indexOfMin = i;
+            }
+        }
+
+        return indexOfMin;
 
     }
     
@@ -53,7 +105,10 @@ public class Exercise06ArraysMaxMin {
      * @return la différence max - min
      */
     public int range(int[] array) {
-        throw new UnsupportedOperationException();
+        int max = findMax(array);
+        int min = findMin(array);
+
+        return max - min;
 
     }
 }

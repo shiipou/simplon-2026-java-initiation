@@ -13,7 +13,23 @@ public class Exercise16InsertionSort {
      * @return le tableau trié
      */
     public int[] insertionSort(int[] array) {
-        throw new UnsupportedOperationException();
+        int valueToMove = 0;
+        int indexToMove = 0;
+        for(int i=1; i < array.length; i++){
+            valueToMove = array[i];
+            indexToMove = i;
+            for(int j=i-1; j >= 0; j--){
+                if(array[j] > valueToMove){
+                    array[j+1] = array[j];
+                    indexToMove = j;
+                }             
+            
+            }
+            array[indexToMove] = valueToMove;
+            
+        }
+
+        return array;
 
     }
     
@@ -23,7 +39,23 @@ public class Exercise16InsertionSort {
      * @return le tableau trié en ordre décroissant
      */
     public int[] insertionSortDescending(int[] array) {
-        throw new UnsupportedOperationException();
+        int valueToMove = 0;
+        int indexToMove = 0;
+        for(int i=1; i < array.length; i++){
+            valueToMove = array[i];
+            indexToMove = i;
+            for(int j=i-1; j >= 0; j--){
+                if(array[j] < valueToMove){
+                    array[j+1] = array[j];
+                    indexToMove = j;
+                }             
+            
+            }
+            array[indexToMove] = valueToMove;
+            
+        }
+
+        return array;
 
     }
     
@@ -33,7 +65,25 @@ public class Exercise16InsertionSort {
      * @return le nombre de décalages effectués
      */
     public int countShifts(int[] array) {
-        throw new UnsupportedOperationException();
+        int valueToMove = 0;
+        int indexToMove = 0;
+        int totalMove = 0;
+        for(int i=1; i < array.length; i++){
+            valueToMove = array[i];
+            indexToMove = i;
+            for(int j=i-1; j >= 0; j--){
+                if(array[j] > valueToMove){
+                    array[j+1] = array[j];
+                    indexToMove = j;
+                    totalMove++;
+                }             
+            
+            }
+            array[indexToMove] = valueToMove;
+            
+        }
+
+        return totalMove;
 
     }
     
@@ -44,7 +94,33 @@ public class Exercise16InsertionSort {
      * @return un nouveau tableau avec l'élément inséré à la bonne place
      */
     public int[] insertIntoSorted(int[] sortedArray, int element) {
-        throw new UnsupportedOperationException();
+        int[] newArr = new int[sortedArray.length+1];
+        boolean elementInserted = false;
+
+        if(newArr.length == 1){
+            newArr[0] = element;
+            return newArr;
+        }
+
+        for(int i=0; i < sortedArray.length; i++){
+            if( !elementInserted && element > sortedArray[i] ){
+                newArr[i] = sortedArray[i];
+            }
+            if( !elementInserted && element < sortedArray[i] ){
+                newArr[i] = element;
+                elementInserted = true;
+            }
+            if(elementInserted){
+                newArr[i+1] = sortedArray[i];
+            }
+
+        }
+
+        if(!elementInserted){
+            newArr[newArr.length-1] = element;
+        }
+
+        return newArr;
 
     }
 }

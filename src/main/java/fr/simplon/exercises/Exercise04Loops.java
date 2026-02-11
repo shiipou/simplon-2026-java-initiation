@@ -13,7 +13,13 @@ public class Exercise04Loops {
      * @return la somme de 1 + 2 + ... + n
      */
     public int sumUpToN(int n) {
-        throw new UnsupportedOperationException();
+        int result = 0;
+
+        for (int i = 0; i <= n; i++){
+            result += i;
+        }
+
+        return result;
 
     }
     
@@ -23,8 +29,15 @@ public class Exercise04Loops {
      * @return le nombre inversé
      */
     public int reverseNumber(int number) {
-        throw new UnsupportedOperationException();
-
+        String inverseInString = String.valueOf(number);
+        String[] inverseArray = inverseInString.split("");
+        String inverse = "";
+        
+        for(int i = (inverseArray.length - 1); i >= 0; i--){
+            inverse += inverseArray[i];
+        }
+        int inverseInt = Integer.parseInt(inverse);
+        return inverseInt;
     }
     
     /**
@@ -33,7 +46,13 @@ public class Exercise04Loops {
      * @return n! (n factorielle)
      */
     public int factorial(int n) {
-        throw new UnsupportedOperationException();
+        int result = 1;
+
+        for (int i = 1; i <= n; i++){
+            result *= i;
+        }
+
+        return result;
 
     }
     
@@ -43,7 +62,10 @@ public class Exercise04Loops {
      * @return le nombre de chiffres
      */
     public int countDigits(int number) {
-        throw new UnsupportedOperationException();
+        String numberTonString = String.valueOf(number);
+        String[] numberSplited = numberTonString.split("");
+
+        return numberSplited.length;
 
     }
     
@@ -53,7 +75,25 @@ public class Exercise04Loops {
      * @return true si le nombre est premier, false sinon
      */
     public boolean isPrime(int number) {
-        throw new UnsupportedOperationException();
+        int num = number;
+        System.out.println(num);
+        boolean isPrime = true;
+
+        if(number <= 1){
+            return false;
+        }
+        if(number == 2){
+            return true;
+        }
+        for(int i = 2; i < number; i++){
+            
+            if(number % i == 0){
+                isPrime = false;
+                break;
+            }
+            
+        }
+        return isPrime;
 
     }
 }
