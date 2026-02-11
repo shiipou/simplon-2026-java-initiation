@@ -14,7 +14,13 @@ public class Exercise03ConditionalStatements {
      * @return le plus grand des deux nombres
      */
     public int max(int a, int b) {
-        throw new UnsupportedOperationException();
+        if(a > b){
+            return a;
+        }
+        else{
+            return b;
+        }
+        
 
     }
     
@@ -24,7 +30,12 @@ public class Exercise03ConditionalStatements {
      * @return true si le nombre est positif (> 0), false sinon
      */
     public boolean isPositive(int number) {
-        throw new UnsupportedOperationException();
+        boolean isPositive = false;
+        if(number > 0){
+            isPositive = true;
+        }
+
+        return isPositive;
 
     }
     
@@ -34,7 +45,12 @@ public class Exercise03ConditionalStatements {
      * @return la valeur absolue du nombre
      */
     public int absoluteValue(int number) {
-        throw new UnsupportedOperationException();
+        if(isPositive(number)){
+            return number;
+        }
+        else{
+            return -1 * number;
+        }
 
     }
     
@@ -44,7 +60,11 @@ public class Exercise03ConditionalStatements {
      * @return true si le nombre est pair, false sinon
      */
     public boolean isEven(int number) {
-        throw new UnsupportedOperationException();
+        if(number % 2 == 0){
+            return true;
+        }
+
+        return false;
 
     }
     
@@ -54,7 +74,21 @@ public class Exercise03ConditionalStatements {
      * @return "A" si >= 90, "B" si >= 80, "C" si >= 70, "D" si >= 60, "F" sinon
      */
     public String getGrade(int score) {
-        throw new UnsupportedOperationException();
+        if(score >= 90){
+            return "A";
+        }
+        else if(score >= 80){
+            return "B";
+        }
+        else if(score >= 70){
+            return "C";
+        }
+        else if(score >= 60){
+            return "D";
+        }
+        else{
+            return "F";
+        }
 
     }
 }

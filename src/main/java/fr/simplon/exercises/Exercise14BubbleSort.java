@@ -13,7 +13,26 @@ public class Exercise14BubbleSort {
      * @return le tableau trié (modifier le tableau en place)
      */
     public int[] bubbleSort(int[] array) {
-        throw new UnsupportedOperationException();
+        
+        boolean isSorted = false;
+
+        while(!isSorted){
+            int modification = 0;
+             for(int i=0; i < array.length-1; i++){
+                
+                if(array[i] > array[i+1]){
+                    int tmp = array[i+1];
+                    array[i+1] = array[i];
+                    array[i] = tmp;
+                   modification++;
+                }
+            }
+            if(modification == 0){
+                isSorted = true;
+            }
+        }
+       
+        return array;
 
     }
     
@@ -23,7 +42,26 @@ public class Exercise14BubbleSort {
      * @return le tableau trié en ordre décroissant
      */
     public int[] bubbleSortDescending(int[] array) {
-        throw new UnsupportedOperationException();
+        
+        boolean isSorted = false;
+
+        while(!isSorted){
+            int modification = 0;
+             for(int i=0; i < array.length-1; i++){
+                
+                if(array[i] < array[i+1]){
+                    int tmp = array[i+1];
+                    array[i+1] = array[i];
+                    array[i] = tmp;
+                   modification++;
+                }
+            }
+            if(modification == 0){
+                isSorted = true;
+            }
+        }
+       
+        return array;
 
     }
     
@@ -33,7 +71,26 @@ public class Exercise14BubbleSort {
      * @return le nombre d'échanges effectués
      */
     public int countSwaps(int[] array) {
-        throw new UnsupportedOperationException();
+         boolean isSorted = false;
+        int total = 0;
+        while(!isSorted){
+            int modification = 0;
+             for(int i=0; i < array.length-1; i++){
+                
+                if(array[i] > array[i+1]){
+                    int tmp = array[i+1];
+                    array[i+1] = array[i];
+                    array[i] = tmp;
+                   modification++;
+                   total++;
+                }
+            }
+            if(modification == 0){
+                isSorted = true;
+            }
+        }
+       
+        return total;
 
     }
     
@@ -44,7 +101,24 @@ public class Exercise14BubbleSort {
      * @return le tableau avec les k premiers éléments triés
      */
     public int[] partialBubbleSort(int[] array, int k) {
-        throw new UnsupportedOperationException();
+         boolean isSorted = false;        
+        while(!isSorted){
+            int modification = 0;
+            for(int i=0; i < k; i++){                
+                if(array[i] > array[i+1]){
+                    int tmp = array[i+1];
+                    array[i+1] = array[i];
+                    array[i] = tmp;
+                    modification++;
+                }
+            }
+            if(modification == 0){
+                isSorted = true;
+            }
+          
+        }
+       
+        return array;
 
     }
 }

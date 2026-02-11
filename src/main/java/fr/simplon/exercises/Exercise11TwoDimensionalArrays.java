@@ -14,7 +14,18 @@ public class Exercise11TwoDimensionalArrays {
      * @return une matrice rows x cols remplie de 0
      */
     public int[][] createMatrix(int rows, int cols) {
-        throw new UnsupportedOperationException();
+        int[][] matrice = new int[rows][cols];
+
+        for(int i=0; i < rows; i++){
+            int[] row = new int[cols];
+                for(int j=0; j < rows; j++){
+                    row[j] = 0;
+                }
+                matrice[i] = row;
+            
+        }
+
+        return matrice;
 
     }
     
@@ -24,7 +35,16 @@ public class Exercise11TwoDimensionalArrays {
      * @return la somme de tous les éléments
      */
     public int sumMatrix(int[][] matrix) {
-        throw new UnsupportedOperationException();
+        int total = 0;
+
+        for(int i=0; i < matrix.length; i++){
+            int[] row = matrix[i];
+            for(int j=0; j < row.length; j++){
+                total += row[j];
+            }
+        }
+
+        return total;
 
     }
     
@@ -34,7 +54,22 @@ public class Exercise11TwoDimensionalArrays {
      * @return la valeur maximale
      */
     public int findMaxInMatrix(int[][] matrix) {
-        throw new UnsupportedOperationException();
+        int max = 0;
+        
+        for(int i=0; i < matrix.length; i++){
+            int[] row = matrix[i];
+            for(int j=0; j < row.length; j++){
+                if(i == 0){
+                    max = row[j];
+                    continue;
+                }
+                if(row[j] > max){
+                    max = row[j];
+                }
+            }
+        }
+
+        return max;
 
     }
     
@@ -44,7 +79,27 @@ public class Exercise11TwoDimensionalArrays {
      * @return la matrice transposée
      */
     public int[][] transpose(int[][] matrix) {
-        throw new UnsupportedOperationException();
+        /**
+         * [[1, 2, 3] 00 => 00; 01 => 10; 
+         *  [4, 5, 6]
+         * ]
+         * 
+         * [[1, 4]
+         *  [2, 5]
+         *  [3, 6]
+         * ]
+         */
+        int[][] arrTransposed = new int[matrix[0].length][matrix.length];
+
+        for(int i=0; i < matrix.length; i++){
+            int[] row = matrix[i];
+            for(int j=0; j < row.length; j++){
+                arrTransposed[j][i] = matrix[i][j];
+                
+            }
+        }
+
+        return arrTransposed;
 
     }
     
@@ -54,7 +109,27 @@ public class Exercise11TwoDimensionalArrays {
      * @return un tableau contenant les éléments de la diagonale
      */
     public int[] getDiagonal(int[][] matrix) {
-        throw new UnsupportedOperationException();
+        /**
+         * [[0,0,0,0]
+         *  [0,0,0,0]
+         *  [0,0,0,0]
+         *  [0,0,0,0]
+         * ]
+         */
+        int[] arrDiag = new int[matrix.length];
+
+        for(int i=0; i < matrix.length; i++){
+            int[] row = matrix[i];
+            for(int j=0; j < row.length; j++){
+                
+                if(i == j){
+                    arrDiag[i] = matrix[i][j];
+                }
+                
+            }
+        }
+
+        return arrDiag;
 
     }
     
